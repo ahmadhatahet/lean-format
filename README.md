@@ -38,7 +38,7 @@ LEAN and TOON tie on accuracy (~57%), but LEAN uses fewer tokens. JSON pretty-pr
 npm install github:ahmadhatahet/lean-format#main
 ```
 
-Prebuilt Node.js binaries are provided for macOS (x64 and arm64), Windows (x64 and arm64), and Linux (x64 and arm64, glibc and musl).
+Prebuilt Node.js binaries are provided for macOS (x64 and arm64), Windows (x64 and arm64), and Linux (x64 with glibc or musl; arm64 with glibc).
 Installing from GitHub builds the native addon locally and requires Rust and Node.js.
 
 ### Python
@@ -269,7 +269,7 @@ For the local Python test environment, leave it with `deactivate` and remove `.v
 
 The npm addon uses N-API platform packages. After the native artifact workflow passes, run `npx napi pre-publish -t npm` to publish the platform packages and prepare the root package, then publish the root npm package. Python wheels are built with maturin; publish the Cargo core crate before the CLI crate.
 
-The release configuration builds and checks Node.js and Python on macOS, Linux, and Windows across x64 and arm64. Node.js targets Linux glibc and musl. Publishing requires the corresponding registry accounts and credentials.
+The release configuration builds and checks Node.js and Python on macOS, Linux, and Windows across x64 and arm64. Node.js targets Linux x64 glibc and musl, plus arm64 glibc. Publishing requires the corresponding registry accounts and credentials.
 
 ## Benchmark Methodology
 
